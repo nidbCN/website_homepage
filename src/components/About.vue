@@ -57,6 +57,7 @@ import Axios from "axios";
 export default {
   name: "About",
   data: () => ({
+    title: "",
     content: [
       {
         title: "关于我",
@@ -82,7 +83,7 @@ export default {
       Axios.get("https://static.cdn.gaein.cn/website_used/home_page_data.about.json")
           .then(response => {
             this.content = response.data.content;
-
+            document.title = response.data.title + " | Gaein nidb 的网站";
           })
           .catch(error => {
             console.error(error);
