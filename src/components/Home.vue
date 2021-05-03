@@ -55,8 +55,6 @@ export default {
     getData() {
       Axios.get("https://static.cdn.gaein.cn/website_used/home_page_data.home.json")
           .then(response => {
-            console.log(this.content);
-            console.log(response.data);
             this.content = response.data.content;
 
           })
