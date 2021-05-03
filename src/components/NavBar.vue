@@ -4,7 +4,7 @@
       color="primary"
       dark
   >
-    <v-icon>Gaein nidb</v-icon>
+    Gaein nidb
     <v-spacer/>
     <v-btn v-for="(item,i) in links"
            text
@@ -27,16 +27,16 @@ export default {
     title: "",
     links: [],
   }),
-  methods:{
+  methods: {
     getLinks() {
       Axios.get("https://static.cdn.gaein.cn/website_used/home_page_data.json")
-      .then(response => {
-        this.links = response.data.links;
-        this.title = response.data.title;
-      })
-      .catch(error => {
-        console.error(error);
-      })
+          .then(response => {
+            this.links = response.data.links;
+            this.title = response.data.title;
+          })
+          .catch(error => {
+            console.error(error);
+          })
     }
   },
   created() {
