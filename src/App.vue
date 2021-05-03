@@ -1,27 +1,23 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      Gaein nidb
-    </v-app-bar>
+    <NavBar/>
 
     <v-main>
-      <HelloWorld/>
+      <v-container>
+        <router-view/>
+      </v-container>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import NavBar from "@/components/NavBar";
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    NavBar,
   },
 
   data: () => ({
