@@ -16,7 +16,8 @@ const routes = [
     },
     {
         path: "/friends",
-        name: "Friends"
+        name: "Friends",
+        component:() => import('./components/Friends'),
     }
 ];
 

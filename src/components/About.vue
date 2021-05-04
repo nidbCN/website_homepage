@@ -62,7 +62,7 @@ export default {
       {
         title: "关于我",
         content_list: [
-          "河北唐山人，中北大学大一学生，学习计算机专业。",
+          "中北大学大一学牲，计算机专业，爱整烂活（x。",
         ],
         timeline: [
           {
