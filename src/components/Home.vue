@@ -5,7 +5,7 @@
         <v-img
             class="white--text align-end"
             height="500px"
-            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+            src="https://img.cdn.gaein.cn/website_used/home/background.webp"
         >
           <v-card-title>Gaein nidb 的小站</v-card-title>
         </v-img>
