@@ -21,6 +21,17 @@
 
 <script>
 export default {
-  name: "Friends"
+  name: "Friends",
+  data: () => ({
+    title: "",
+    links: [
+      {
+        avatar: "",
+        title: "",
+        description: "",
+        url: ""
+      }
+    ]
+  }),
 }
 </script>
