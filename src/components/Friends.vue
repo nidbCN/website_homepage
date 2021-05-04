@@ -37,6 +37,11 @@
         <v-card-text>
           <v-form>
             <v-container>
+              <v-alert border="left"
+                       color="red"
+                       dark>
+                表单暂不可用，还请烦劳发邮件
+              </v-alert>
               <v-card
                   max-width="800"
                   class="mx-auto"
@@ -62,7 +67,7 @@
                       <v-icon>mdi-refresh</v-icon>
                       重置表单
                     </v-btn>
-                    <v-btn text color="primary">其它请发邮件到 mail@gaein.cn</v-btn>
+                    <v-btn href="mailto:mail@gaein.cn" text color="primary">其它请发邮件到 mail@gaein.cn</v-btn>
                   </v-container>
                 </v-card-actions>
 
@@ -104,23 +109,38 @@ export default {
   }),
   methods: {
     autoInputTitle() {
-      console.log("HERE");
       Axios.get(this.user_link.url)
           .then(response => {
             const html = response.data;
 
-            let handler = new HtmlParser.DefaultHandler((error,dom)=>{
-              if(error){
+            let handler = new HtmlParser.DefaultHandler((error) => {
+              if (error) {
                 console.error(error);
-              } else {
-                console.log(dom);
               }
             });
-
-            let parser = new HtmlParser.Parser(handler);
+            const parser = new HtmlParser.Parser(handler);
             parser.parseComplete(html);
 
-            console.log(handler.dom);
+            const block_tags = handler.dom;
+            for (let i = 0; i < block_tags.length; i++) {
+              if (block_tags[i]["name"] === "html") {
+                const head_tags = block_tags[i]["children"];
+
+                for (let j = 0; j < head_tags.length; j++) {
+                  if (head_tags[j]["name"] === "head") {
+                    const attr_tags = head_tags[j]["children"];
+
+                    for (let k = 0; k < attr_tags.length; k++) {
+                      console.log(attr_tags[k]);
+
+                      if (attr_tags[k]["name"] === "title") {
+                        this.user_link.title = attr_tags[k]["children"][0]["data"];
+                      }
+                    }
+                  }
+                }
+              }
+            }
           })
           .catch(error => {
             console.error(error);
