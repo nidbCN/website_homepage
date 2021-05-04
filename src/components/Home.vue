@@ -38,6 +38,16 @@
             {{ text }}
           </p>
         </v-card-text>
+        <v-card-actions>
+          <v-btn
+              color="blue"
+              text
+              href="https://www.gaein.cn/about"
+          >
+            <v-icon small>mdi-arrow-right</v-icon>
+            MORE
+          </v-btn>
+        </v-card-actions>
       </v-card>
     </v-container>
   </v-container>

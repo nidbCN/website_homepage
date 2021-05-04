@@ -6,14 +6,16 @@
   >
     Gaein nidb
     <v-spacer/>
-    <v-btn v-for="(item,i) in links"
-           text
-           :href="item.url"
-           :key="i">
+    <div class="d-none d-sm-flex">
+      <v-btn v-for="(item,i) in links"
+             text
+             :href="item.url"
+             :key="i">
 
-      <v-icon>{{ item.icon }}</v-icon>
-      {{ item.title }}
-    </v-btn>
+        <v-icon>{{ item.icon }}</v-icon>
+        {{ item.title }}
+      </v-btn>
+    </div>
   </v-app-bar>
 
 </template>
