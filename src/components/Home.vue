@@ -42,7 +42,7 @@
           <v-btn
               color="blue"
               text
-              href="https://www.gaein.cn/friends"
+              href="https://www.gaein.cn/about"
           >
             <v-icon small>mdi-arrow-right</v-icon>
             MORE
