@@ -14,6 +14,7 @@
           text
           rounded
           class="my-2"
+          :href="link.url"
       >
         {{ link.title }}
       </v-btn>

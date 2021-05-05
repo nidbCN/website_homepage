@@ -7,6 +7,7 @@
     Gaein nidb
     <v-spacer/>
     <div class="d-none d-sm-flex">
+      <v-btn-toggle tile group>
       <v-btn v-for="(item,i) in links"
              text
              :href="item.url"
@@ -15,6 +16,7 @@
         <v-icon>{{ item.icon }}</v-icon>
         {{ item.title }}
       </v-btn>
+      </v-btn-toggle>
     </div>
   </v-app-bar>
 

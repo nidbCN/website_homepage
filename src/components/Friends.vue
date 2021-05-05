@@ -6,7 +6,7 @@
         <v-card-subtitle>小伙伴的网站</v-card-subtitle>
         <v-card-text>
           <v-container>
-            <v-row align="start">
+            <v-row justify="space-between" align="start">
               <v-col class="col-auto" v-for="(item,i) in links" :key="i">
                 <v-card shaped width="300px">
                   <v-card-title>
@@ -26,6 +26,18 @@
                 </v-card>
               </v-col>
             </v-row>
+          </v-container>
+          <v-container>
+            <v-alert
+                border="top"
+                colored-border
+                type="warning"
+                elevation="1"
+            >
+              <div>以“好耶，”开头的说明为我自行添加，部分网站的说明由于排版原因进行了缩减。</div>
+              <div>出于访问速度考虑，所有的头图均使用了原图在我服务器上的128x128副本。</div>
+              <div>如有更新或其它请发邮件<v-btn small text color="primary">MAIL@GAEIN.CN</v-btn></div>
+            </v-alert>
           </v-container>
         </v-card-text>
       </v-card>
@@ -131,9 +143,9 @@ export default {
                     const attr_tags = head_tags[j]["children"];
 
                     for (let k = 0; k < attr_tags.length; k++) {
-                      console.log(attr_tags[k]);
 
                       if (attr_tags[k]["name"] === "title") {
+                        console.log(attr_tags[k]["children"]);
                         this.user_link.title = attr_tags[k]["children"][0]["data"];
                       }
                     }
