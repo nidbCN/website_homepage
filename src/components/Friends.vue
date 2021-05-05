@@ -36,7 +36,9 @@
             >
               <div>以“好耶，”开头的说明为我自行添加，部分网站的说明由于排版原因进行了缩减。</div>
               <div>出于访问速度考虑，所有的头图均使用了原图在我服务器上的128x128副本。</div>
-              <div>如有更新或其它请发邮件<v-btn small text color="primary">MAIL@GAEIN.CN</v-btn></div>
+              <div>如有更新或其它请发邮件
+                <v-btn small text color="primary">MAIL@GAEIN.CN</v-btn>
+              </div>
             </v-alert>
           </v-container>
         </v-card-text>
@@ -49,10 +51,15 @@
         <v-card-text>
           <v-form>
             <v-container>
-              <v-alert border="left"
-                       color="red"
-                       dark>
-                表单暂不可用，还请烦劳发邮件
+              <v-alert
+                  border="top"
+                  colored-border
+                  type="error"
+                  elevation="1"
+              >
+                <div>表单暂不可用，还请烦劳发邮件到
+                  <v-btn small text color="primary">MAIL@GAEIN.CN</v-btn>
+                </div>
               </v-alert>
               <v-card
                   max-width="800"
@@ -71,15 +78,18 @@
 
                 <v-card-actions>
                   <v-container>
-                    <v-btn class="mr-4" color="success">
-                      <v-icon>mdi-send</v-icon>
-                      提交网站信息
-                    </v-btn>
-                    <v-btn color="error" class="mr-4">
-                      <v-icon>mdi-refresh</v-icon>
-                      重置表单
-                    </v-btn>
-                    <v-btn href="mailto:mail@gaein.cn" text color="primary">其它请发邮件到 mail@gaein.cn</v-btn>
+                      <v-btn class="mr-4" color="success">
+                        <v-icon>mdi-send</v-icon>
+                        提交
+                      </v-btn>
+                      <v-btn color="error" class="mr-4">
+                        <v-icon>mdi-refresh</v-icon>
+                        重置
+                      </v-btn>
+                      <v-btn href="mailto:mail@gaein.cn" text color="primary">
+                        <v-icon>mdi-email-send</v-icon>
+                        其它情况请发送邮件
+                      </v-btn>
                   </v-container>
                 </v-card-actions>
 

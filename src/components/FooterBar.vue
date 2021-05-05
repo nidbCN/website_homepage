@@ -22,7 +22,10 @@
           class="py-4 text-center white--text"
           cols="12"
       >
-        <p>Powered by VueJs | Made with
+        <p>Powered by
+          <v-icon color="green">mdi-vuejs</v-icon>
+          &
+          <span style="background-color: #512BD4; padding: 4px"><v-icon large color="white">mdi-dot-net</v-icon></span> | Made with
           <v-icon color="red"> mdi-heart</v-icon>
         </p>
         <p>2017 - {{ new Date().getFullYear() }} <strong>Gaein nidb | Gaein.cn</strong></p>
