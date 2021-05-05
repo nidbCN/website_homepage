@@ -18,7 +18,7 @@
                   </v-card-title>
                   <v-card-text>{{ item.description }}</v-card-text>
                   <v-card-actions>
-                    <v-btn :href="item.url" color="blue" text>
+                    <v-btn target="_blank" :href="item.url" color="blue" text>
                       去看看
                       <v-icon>mdi-arrow-right-circle-outline</v-icon>
                     </v-btn>
