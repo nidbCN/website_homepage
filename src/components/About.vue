@@ -2,7 +2,8 @@
   <v-container>
     <v-container
         v-for="(item,key) in this.content"
-        :key="key">
+        :key="key"
+    >
       <v-card>
         <v-card-title>{{ item.title }}</v-card-title>
 
@@ -12,13 +13,9 @@
           </div>
 
           <v-divider/>
-
           <p class="text-h5">时间线</p>
-
           <v-card
               elevation="0"
-              class="mx-auto"
-              max-width="800"
           >
             <v-container>
               <v-timeline align-top>
@@ -56,6 +53,18 @@ import Axios from "axios";
 
 export default {
   name: "About",
+  methods: {
+    getData() {
+      Axios.get("https://static.cdn.gaein.cn/website_used/home_page_data.about.json")
+          .then(response => {
+            this.content = response.data.content;
+            document.title = response.data.title + " | Gaein nidb 的网站";
+          })
+          .catch(error => {
+            console.error(error);
+          })
+    }
+  },
   data: () => ({
     title: "",
     content: [
@@ -77,18 +86,6 @@ export default {
   }),
   created() {
     this.getData();
-  },
-  methods: {
-    getData() {
-      Axios.get("https://static.cdn.gaein.cn/website_used/home_page_data.about.json")
-          .then(response => {
-            this.content = response.data.content;
-            document.title = response.data.title + " | Gaein nidb 的网站";
-          })
-          .catch(error => {
-            console.error(error);
-          })
-    }
   },
 }
 </script>

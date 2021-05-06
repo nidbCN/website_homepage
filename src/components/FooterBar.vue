@@ -43,9 +43,6 @@ import Axios from "axios";
 
 export default {
   name: "FooterBar",
-  created() {
-    this.getLinks();
-  },
   methods: {
     getLinks() {
       Axios.get("https://static.cdn.gaein.cn/website_used/home_page_data.json")
@@ -60,5 +57,8 @@ export default {
   data: () => ({
     links: []
   }),
+  created() {
+    this.getLinks();
+  },
 }
 </script>

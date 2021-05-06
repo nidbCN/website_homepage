@@ -49,18 +49,41 @@
         <v-card-title>添加友链</v-card-title>
         <v-card-subtitle>欢迎巨佬们来互换友链哦</v-card-subtitle>
         <v-card-text>
+          <v-container>
+            <v-alert
+                border="top"
+                colored-border
+                type="error"
+                elevation="1"
+            >
+              <div>表单暂不可用，还请烦劳发邮件到
+                <v-btn small text color="primary">MAIL@GAEIN.CN</v-btn>
+              </div>
+            </v-alert>
+          </v-container>
+
+          <v-container>
+            <v-alert
+                border="top"
+                colored-border
+                type="info"
+                elevation="1"
+            >
+              <div>
+
+                <v-list>
+                  本站信息：
+                  <v-list-group>
+
+                    <v-list-item-title>test</v-list-item-title>
+                  </v-list-group>
+                </v-list>
+              </div>
+            </v-alert>
+          </v-container>
+
           <v-form>
             <v-container>
-              <v-alert
-                  border="top"
-                  colored-border
-                  type="error"
-                  elevation="1"
-              >
-                <div>表单暂不可用，还请烦劳发邮件到
-                  <v-btn small text color="primary">MAIL@GAEIN.CN</v-btn>
-                </div>
-              </v-alert>
               <v-card
                   max-width="800"
                   class="mx-auto"
