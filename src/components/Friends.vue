@@ -69,16 +69,21 @@
                 type="info"
                 elevation="1"
             >
-              <div>
 
-                <v-list>
-                  本站信息：
-                  <v-list-group>
+              <v-expansion-panels>
+                <v-expansion-panel>
+                  <v-expansion-panel-header>
+                    我的网站信息
+                  </v-expansion-panel-header>
+                  <v-expansion-panel-content>
+                    <p>网站名称：Gaein nidb 的网站</p>
+                    <p>网站链接：
+                      <code>https://www.gaein.cn</code>
+                    </p>
+                  </v-expansion-panel-content>
+                </v-expansion-panel>
+              </v-expansion-panels>
 
-                    <v-list-item-title>test</v-list-item-title>
-                  </v-list-group>
-                </v-list>
-              </div>
             </v-alert>
           </v-container>
 
@@ -101,18 +106,18 @@
 
                 <v-card-actions>
                   <v-container>
-                      <v-btn class="mr-4" color="success">
-                        <v-icon>mdi-send</v-icon>
-                        提交
-                      </v-btn>
-                      <v-btn color="error" class="mr-4">
-                        <v-icon>mdi-refresh</v-icon>
-                        重置
-                      </v-btn>
-                      <v-btn href="mailto:mail@gaein.cn" text color="primary">
-                        <v-icon>mdi-email-send</v-icon>
-                        其它情况请发送邮件
-                      </v-btn>
+                    <v-btn class="mr-4" color="success">
+                      <v-icon>mdi-send</v-icon>
+                      提交
+                    </v-btn>
+                    <v-btn color="error" class="mr-4">
+                      <v-icon>mdi-refresh</v-icon>
+                      重置
+                    </v-btn>
+                    <v-btn href="mailto:mail@gaein.cn" text color="primary">
+                      <v-icon>mdi-email-send</v-icon>
+                      其它情况请发送邮件
+                    </v-btn>
                   </v-container>
                 </v-card-actions>
 

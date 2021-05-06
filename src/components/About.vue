@@ -14,9 +14,8 @@
 
           <v-divider/>
           <p class="text-h5">时间线</p>
-          <v-card
-              elevation="0"
-          >
+
+          <v-sheet>
             <v-container>
               <v-timeline align-top>
                 <v-timeline-item
@@ -41,7 +40,7 @@
                 </v-timeline-item>
               </v-timeline>
             </v-container>
-          </v-card>
+          </v-sheet>
         </v-card-text>
       </v-card>
     </v-container>
