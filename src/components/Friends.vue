@@ -77,9 +77,25 @@
                   </v-expansion-panel-header>
                   <v-expansion-panel-content>
                     <p>网站名称：Gaein nidb 的网站</p>
-                    <p>网站链接：
-                      <code>https://www.gaein.cn</code>
+                    <p>
+                      网站链接：
+                      <input readonly id="my_site_url" value="https://www.gaein.cn"/>
+                      <v-btn text small @click="copyLink">
+                        <v-icon>mdi-content-copy</v-icon>
+                      </v-btn>
                     </p>
+                    <p>头像链接：</p>
+
+                    <v-slider
+                        v-model="fruits"
+                        :tick-labels="ticksLabels"
+                        :max="3"
+                        step="1"
+                        ticks="always"
+                        tick-size="4"
+                    ></v-slider>
+
+
                   </v-expansion-panel-content>
                 </v-expansion-panel>
               </v-expansion-panels>
@@ -140,6 +156,7 @@ export default {
     this.getLinks();
   },
   data: () => ({
+    avatar_size: 256,
     user_link: {
       avatar: "",
       title: "",
@@ -158,6 +175,11 @@ export default {
     ]
   }),
   methods: {
+    copyLink() {
+      let url = document.getElementById("my_site_url");
+      url.select();
+      document.execCommand("Copy");
+    },
     autoInputTitle() {
       Axios.get(this.user_link.url)
           .then(response => {
