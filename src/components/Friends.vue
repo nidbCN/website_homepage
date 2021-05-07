@@ -84,17 +84,47 @@
                         <v-icon>mdi-content-copy</v-icon>
                       </v-btn>
                     </p>
-                    <p>头像链接：</p>
 
-                    <v-slider
-                        v-model="fruits"
-                        :tick-labels="ticksLabels"
-                        :max="3"
-                        step="1"
-                        ticks="always"
-                        tick-size="4"
-                    ></v-slider>
+                    <v-row align="start" justify="start">
+                      <v-col class="col-auto">
+                        <v-sheet width="120">
+                          <v-select
+                              v-model="website_info.avatar_size_select"
+                              :items="website_info.avatar_size"
+                              label="头像大小"
+                          />
+                        </v-sheet>
+                      </v-col>
 
+                      <v-col class="col-auto">
+                        <v-sheet width="120">
+                          <v-select
+                              v-model="website_info.avatar_format_select"
+                              :items="website_info.avatar_format"
+                              label="图片格式"
+                          />
+                        </v-sheet>
+                      </v-col>
+                    </v-row>
+
+                    <p>头像链接：
+                      <input readonly id="my_avatar_url"
+                             :value="'https://img.cdn.gaein.cn/website_used/avatars/avatar-'
+                             + website_info.avatar_size_select +'.'
+                             + website_info.avatar_format_select"/>
+                      <v-btn text small @click="copyAvatar">
+                        <v-icon>mdi-content-copy</v-icon>
+                      </v-btn>
+
+                      <v-btn
+                          target="_blank"
+                          color="primary"
+                          plain
+                          href="https://www.pixiv.net/artworks/87080126"
+                      >
+                        FROM pixiv 87080126
+                      </v-btn>
+                    </p>
 
                   </v-expansion-panel-content>
                 </v-expansion-panel>
@@ -156,7 +186,12 @@ export default {
     this.getLinks();
   },
   data: () => ({
-    avatar_size: 256,
+    website_info: {
+      avatar_format: ["webp", "png"],
+      avatar_format_select: 'webp',
+      avatar_size: ["128x", "256x", "512x"],
+      avatar_size_select: "128x",
+    },
     user_link: {
       avatar: "",
       title: "",
@@ -175,6 +210,11 @@ export default {
     ]
   }),
   methods: {
+    copyAvatar() {
+      let url = document.getElementById("my_avatar_url");
+      url.select();
+      document.execCommand("Copy");
+    },
     copyLink() {
       let url = document.getElementById("my_site_url");
       url.select();
