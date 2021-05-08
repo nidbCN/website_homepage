@@ -1,24 +1,13 @@
-# webiste_homepage
+# NOTICE: THIS IS A PERSONAL WEBSITE FONT-END, PLEASE NOT USE DIRECTLY IN YOUR PROJECT.
 
-## Project setup
-```
-npm install
-```
+## Usage
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+```bash
+git clone git@github.com:nidbCN/website_homepage.git
+cd website_homepage
+./build.sh
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## More
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+See source code.
