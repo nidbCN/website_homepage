@@ -57,7 +57,7 @@ export default {
       Axios.get("https://static.cdn.gaein.cn/website_used/home_page_data.about.json")
           .then(response => {
             this.content = response.data.content;
-            document.title = response.data.title + " | Gaein nidb 的网站";
+            document.title = response.data.title + " | Gaein nidb 的小站 —— 记录生活";
           })
           .catch(error => {
             console.error(error);

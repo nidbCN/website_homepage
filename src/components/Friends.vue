@@ -76,7 +76,7 @@
                     我的网站信息
                   </v-expansion-panel-header>
                   <v-expansion-panel-content>
-                    <p>网站名称：Gaein nidb 的网站</p>
+                    <p>网站名称：Gaein nidb 的小站</p>
                     <p>
                       网站链接：
                       <input readonly id="my_site_url" value="https://www.gaein.cn"/>
@@ -262,7 +262,7 @@ export default {
       Axios.get("https://static.cdn.gaein.cn/website_used/home_page_data.friends.json")
           .then(response => {
             this.links = response.data.links;
-            document.title = response.data.title + " | Gaein nidb 的网站";
+            document.title = response.data.title + " | Gaein nidb 的小站 —— 记录生活";
           })
           .catch(error => {
             console.error(error);
