@@ -1,17 +1,17 @@
 <template>
   <v-app-bar
       app
-      color="primary"
+      color='primary'
       dark
   >
     Gaein nidb
     <v-spacer/>
-    <div class="d-none d-sm-flex">
+    <div class='d-none d-sm-flex'>
       <v-btn-toggle tile group>
-      <v-btn v-for="(item,i) in links"
+      <v-btn v-for='(item,i) in links'
              text
-             :href="item.url"
-             :key="i"
+             :href='item.url'
+             :key='i'
       >
         <v-icon>{{ item.icon }}</v-icon>
         {{ item.title }}
@@ -23,10 +23,10 @@
 </template>
 
 <script>
-import Axios from "axios";
+import Axios from 'axios';
 
 export default {
-  name: "NavBar",
+  name: 'NavBar',
   data: () => ({
     links: [{}],
   }),
@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     getLinks() {
-      Axios.get("https://static.cdn.gaein.cn/website_used/home_page_data.json")
+      Axios.get('https://static.cdn.gaein.cn/website_used/home_page_data.json')
           .then(response => {
             this.links = response.data.links;
           })
