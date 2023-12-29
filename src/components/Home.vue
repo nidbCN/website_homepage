@@ -4,6 +4,8 @@
       <v-card>
         <v-img
             class='white--text align-end'
+            aspect-ratio="3/2"
+            contain
             height='500px'
             src='https://img.cdn.gaein.cn/website_used/home/background.webp'
         >
