@@ -2,14 +2,11 @@
   <v-container>
     <v-container>
       <v-card>
-        <v-img
-            class='white--text align-end'
-            aspect-ratio="3/2"
-            contain
-            width='100%'
-            src='https://img.cdn.gaein.cn/website_used/home/background.webp'
-        >
-          <v-card-title>Gaein nidb 的小站</v-card-title>
+        <v-img class="align-end" :aspect-ratio="3 / 2" width='inherit'
+          src='https://img.cdn.gaein.cn/website_used/home/background.webp'>
+          <v-card-title class="black" style="opacity: 0.6;">
+            <span class="white--text">Gaein nidb 的小站</span>
+          </v-card-title>
         </v-img>
 
         <v-card-subtitle class='text-h6'>
@@ -24,28 +21,19 @@
       </v-card>
     </v-container>
 
-    <v-container
-        v-for='(item, key) in content'
-        :key='key'>
+    <v-container v-for='(item, key) in content' :key='key'>
       <v-card>
         <v-card-title>
           {{ item.title }}
         </v-card-title>
 
         <v-card-text>
-          <p
-              v-for='(text,key2) in item.content_list'
-              :key='key2'
-          >
+          <p v-for='(text, key2) in item.content_list' :key='key2'>
             {{ text }}
           </p>
         </v-card-text>
         <v-card-actions>
-          <v-btn
-              color='blue'
-              text
-              href='https://www.gaein.cn/about'
-          >
+          <v-btn color='blue' text href='https://www.gaein.cn/about'>
             <v-icon small>mdi-arrow-right</v-icon>
             MORE
           </v-btn>
@@ -66,13 +54,13 @@ export default {
   methods: {
     getData() {
       Axios.get('https://static.cdn.gaein.cn/website_used/home_page_data.home.json')
-          .then(response => {
-            this.content = response.data.content;
-            document.title = response.data.title + ' | Gaein nidb 的小站 —— 记录生活';
-          })
-          .catch(error => {
-            console.error(error);
-          })
+        .then(response => {
+          this.content = response.data.content;
+          document.title = response.data.title + ' | Gaein nidb 的小站 —— 记录生活';
+        })
+        .catch(error => {
+          console.error(error);
+        })
     }
   },
   data: () => ({
