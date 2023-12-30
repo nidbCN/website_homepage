@@ -6,7 +6,7 @@
             class='white--text align-end'
             aspect-ratio="3/2"
             contain
-            height='500px'
+            width='100%'
             src='https://img.cdn.gaein.cn/website_used/home/background.webp'
         >
           <v-card-title>Gaein nidb 的小站</v-card-title>
