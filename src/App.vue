@@ -25,3 +25,16 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+@font-face {
+  font-family: 'GlowSansSC';
+  src: url('https://static.cdn.gaein.cn/fonts/GlowSansSC-Normal-Regular.otf');
+}
+
+.v-application {
+  font-family: 'GlowSansSC',sans-serif !important;
+}
+
+
+</style>
