@@ -15,6 +15,9 @@
 <script>
 import NavBar from '@/components/NavBar';
 import FooterBar from '@/components/FooterBar';
+import VMain from "../dist/js/chunk-vendors.0f443b8e";
+import VApp from "../dist/js/chunk-vendors.0f443b8e";
+import VContainer from "../dist/js/chunk-vendors.0f443b8e";
 
 
 export default {
@@ -29,11 +32,11 @@ export default {
 <style scoped>
 @font-face {
   font-family: 'GlowSansSC';
-  src: url('https://static.cdn.gaein.cn/fonts/GlowSansSC-Normal-Regular.otf');
+  src: url('https://static.cdn.gaein.cn/fonts/glow_sans/GlowSansSC-Normal-Regular.otf');
 }
 
 .v-application {
-  font-family: 'GlowSansSC',sans-serif !important;
+  font-family: 'GlowSansSC', sans-serif !important;
 }
 
 

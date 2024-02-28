@@ -3,7 +3,7 @@
     <v-container>
       <v-card>
         <v-img class="align-end" :aspect-ratio="3 / 2" width='inherit'
-          src='https://img.cdn.gaein.cn/website_used/home/background.webp'>
+               src='https://img.cdn.gaein.cn/website_used/home/background.webp'>
           <v-card-title class="black" style="opacity: 0.6;">
             <span class="white--text">Gaein nidb 的小站</span>
           </v-card-title>
@@ -14,9 +14,7 @@
         </v-card-subtitle>
 
         <v-card-text>
-          <div>
-            <p>Gaein nidb的小站，今天也是精神C#人呢。</p>
-          </div>
+          <p>Gaein nidb的小站，今天也是精神C#人呢。</p>
         </v-card-text>
       </v-card>
     </v-container>
@@ -28,7 +26,7 @@
         </v-card-title>
 
         <v-card-text>
-          <p v-for='(text, key2) in item.content_list' :key='key2'>
+          <p v-for='(text, key2) in item.content_list' :key='key2' class="body-1">
             {{ text }}
           </p>
         </v-card-text>
@@ -54,13 +52,13 @@ export default {
   methods: {
     getData() {
       Axios.get('https://static.cdn.gaein.cn/website_used/home_page_data.home.json')
-        .then(response => {
-          this.content = response.data.content;
-          document.title = response.data.title + ' | Gaein nidb 的小站 —— 记录生活';
-        })
-        .catch(error => {
-          console.error(error);
-        })
+          .then(response => {
+            this.content = response.data.content;
+            document.title = response.data.title + ' | Gaein nidb 的小站 —— 记录生活';
+          })
+          .catch(error => {
+            console.error(error);
+          })
     }
   },
   data: () => ({
