@@ -15,9 +15,6 @@
 <script>
 import NavBar from '@/components/NavBar';
 import FooterBar from '@/components/FooterBar';
-import VMain from "../dist/js/chunk-vendors.0f443b8e";
-import VApp from "../dist/js/chunk-vendors.0f443b8e";
-import VContainer from "../dist/js/chunk-vendors.0f443b8e";
 
 
 export default {
