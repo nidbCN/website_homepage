@@ -81,48 +81,16 @@
 </template>
 
 <script>
-import Axios from 'axios';
+import { aboutContent, aboutInfo } from '../config';
 
 export default {
   name: 'About',
-  methods: {
-    getData() {
-      Axios.get('https://static.cdn.gaein.cn/website_used/home_page_data.about.json')
-          .then(response => {
-            this.content = response.data.content;
-            this.info = response.data.info;
-            document.title = response.data.title + ' | Gaein nidb 的小站 —— 记录生活';
-          })
-          .catch(error => {
-            console.error(error);
-          })
-    }
-  },
   data: () => ({
-    title: '',
-    info: {
-      title: "信息",
-      content: [],
-    },
-    content: [
-      {
-        title: '关于我',
-        content_list: [
-          '中北大学大一学牲，计算机专业，爱整烂活（x。',
-        ],
-        timeline: [
-          {
-            icon: 'mdi-flag',
-            color: 'red',
-            title: 'ERROR NO DATA',
-            content: ''
-          }
-        ]
-      },
-    ],
+    info: aboutInfo,
+    content: aboutContent,
   }),
   created() {
-    this.getData();
+    document.title = '关于 | Gaein nidb 的小站 —— 记录生活';
   },
 }
 </script>

@@ -42,34 +42,15 @@
 </template>
 
 <script>
-import Axios from 'axios';
+import { homeContent } from '../config';
 
 export default {
   name: 'Home',
   created() {
-    this.getData();
-  },
-  methods: {
-    getData() {
-      Axios.get('https://static.cdn.gaein.cn/website_used/home_page_data.home.json')
-          .then(response => {
-            this.content = response.data.content;
-            document.title = response.data.title + ' | Gaein nidb 的小站 —— 记录生活';
-          })
-          .catch(error => {
-            console.error(error);
-          })
-    }
+    document.title = '首页 | Gaein nidb 的小站 —— 记录生活';
   },
   data: () => ({
-    content: [
-      {
-        title: 'GAEIN.CN',
-        content_list: [
-          'Gaein nidb 的个人网站，搭建于2017年，记录和分享有趣的事情以及编程技术。',
-        ],
-      },
-    ],
+    content: homeContent,
   }),
 }
 </script>

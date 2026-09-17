@@ -176,11 +176,12 @@
 <script>
 import Axios from 'axios';
 import HtmlParser from 'htmlparser';
+import { friendLinks } from '../config';
 
 export default {
   name: 'Friends',
   created() {
-    this.getLinks();
+    document.title = '友链 | Gaein nidb 的小站 —— 记录生活';
   },
   data: () => ({
     website_info: {
@@ -197,14 +198,7 @@ export default {
       mail: ''
     },
     title: '',
-    links: [
-      {
-        avatar: '',
-        title: '',
-        description: '',
-        url: ''
-      }
-    ]
+    links: friendLinks
   }),
   methods: {
     copyAvatar() {
@@ -251,16 +245,6 @@ export default {
                 }
               }
             }
-          })
-          .catch(error => {
-            console.error(error);
-          })
-    },
-    getLinks() {
-      Axios.get('https://static.cdn.gaein.cn/website_used/home_page_data.friends.json')
-          .then(response => {
-            this.links = response.data.links;
-            document.title = response.data.title + ' | Gaein nidb 的小站 —— 记录生活';
           })
           .catch(error => {
             console.error(error);

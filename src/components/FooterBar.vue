@@ -39,26 +39,12 @@
 </template>
 
 <script>
-import Axios from 'axios';
+import { navigationLinks } from '../config';
 
 export default {
   name: 'FooterBar',
-  methods: {
-    getLinks() {
-      Axios.get('https://static.cdn.gaein.cn/website_used/home_page_data.json')
-          .then(response => {
-            this.links = response.data.links;
-          })
-          .catch(error => {
-            console.error(error);
-          })
-    }
-  },
   data: () => ({
-    links: []
+    links: navigationLinks
   }),
-  created() {
-    this.getLinks();
-  },
 }
 </script>

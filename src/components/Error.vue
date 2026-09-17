@@ -52,8 +52,7 @@
 </template>
 
 <script>
-import Axios from 'axios';
-import config from '../config';
+import { defaultErrorMessage, errorLinks, errorMessages } from '../config';
 
 export default {
   name: 'Error',
@@ -64,31 +63,15 @@ export default {
       msg: '我也不知道发生了什么诶，唔...',
       details: '连错误信息都找不到啦，好像发生了很严重的错误诶，等会再来看看吧！'
     },
-    links: []
+    links: errorLinks
   }),
-  methods: {
-    getData() {
-      Axios.get(config.dataUrl)
-          .then(response => {
-            const response_data = response.data;
-            this.message_body = response_data['codes'][this.status_code] ?? {
-              msg: config.defaultMsg.msg,
-              details: `我的存储器中并没有关于 HTTP ${this.status_code} 的记录，看来需要好好学习呢...`
-            };
-            console.log(this.message_body);
-            this.links = response_data.links;
-          })
-          .catch(error => {
-            console.log(error);
-          });
-    }
-
-
-  },
   created() {
     this.status_code = this.$route.query['code'];
+    this.message_body = errorMessages[this.status_code] ?? {
+      ...defaultErrorMessage,
+      details: `没有找到 HTTP ${this.status_code ?? '未知'} 的详细说明。`
+    };
     document.title = (this.status_code ?? '未知') + '错误 | Gaein nidb 的网站';
-    this.getData();
   }
 }
 </script>
